@@ -391,7 +391,14 @@ keypress(XKeyEvent *ev)
 		default:
 			return;
 		}
-	}
+	} else if (ev->state & Mod4Mask) {
+		switch(ksym) {
+		case XK_space:
+			system("keyboard-switch-layout.sh");
+		default:
+			return;
+		}
+        }
 
 	switch(ksym) {
 	default:
